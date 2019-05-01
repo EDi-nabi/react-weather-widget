@@ -47,14 +47,15 @@ export class WeatherWidget extends Component {
         this.setState({
           currentLocation
         });
-        if (!this.state.locations.find(location => location.name === currentLocation.name)) {
-          this.setState({
-            locations: [
-              ...this.state.locations,
-              currentLocation,
-            ],
-          });
-        }
+        // TODO cache locations
+        // if (!this.state.locations.find(location => location.name === currentLocation.name)) {
+        //   this.setState({
+        //     locations: [
+        //       ...this.state.locations,
+        //       currentLocation,
+        //     ],
+        //   });
+        // }
       })
       .catch(error => {
         console.log(error);
