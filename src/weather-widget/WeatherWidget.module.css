@@ -1,5 +1,93 @@
+/* css reset */
+div, section, p, time, h2, svg, input, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
 .WeatherWidget {
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
-  padding: 10px;
-  border: 1px #000 solid;
+  color: #fff;
+}
+
+section.weather {
+  width: 100%;
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.WeatherWidget svg {
+  fill: #fff;
+  margin-bottom: 2rem;
+}
+
+section.desc {
+  text-align: center;
+}
+
+section.desc p {
+  margin: 0 0 1rem 0;
+  font-weight: 300;
+}
+
+section.desc time {
+  margin-bottom: 0 0 0.3rem 0;
+  font-weight: 400;
+}
+
+section.desc h2 {
+  font-size: 4rem;
+  margin: 1rem 0;
+  font-weight: 700;
+}
+
+
+/* Colors */
+
+.clear-day {
+  background-color: #f6b83b;
+}
+
+.clear-night {
+  background-color: #000D46;
+}
+
+.cloudy {
+  background-color: #1d5376;
+}
+
+.fog {
+  background-color: #749097;
+}
+
+.partly-cloudy-day {
+  background-color: #47beff;
+}
+
+.partly-cloudy-night {
+  background-color: #0a2033;
+}
+
+.rain {
+  background-color: #51668a;
+}
+
+.sleet {
+  background-color: #758bb1;
+}
+
+.snow {
+  background-color: #9ab0d8;
+}
+
+.wind {
+  background-color: #7bc1e8;
 }

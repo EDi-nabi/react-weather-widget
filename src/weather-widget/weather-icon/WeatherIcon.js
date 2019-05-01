@@ -94,8 +94,8 @@ const weatherIcon = (props) => {
   );
 
   return (
-    <div className="weatherIcon">
-      { icons[props.icon] }
+    <div className={ styles.weatherIcon }>
+      { icons[props.icon] ? icons[props.icon] : icons['clear-day'] }
     </div>
   );
 }
