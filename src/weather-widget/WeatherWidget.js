@@ -23,6 +23,11 @@ export class WeatherWidget extends Component {
   }
 
   getWeather = (location) => {
+    const cachedLocationIndex = this.state.locations.findIndex(item => item.name === location);
+    if (cachedLocationIndex >= 0 && moment.unix(this.state.locations[cachedLocationIndex].timestamp).add(30, 'm').isSameOrAfter(moment())) {
+      this.setState({ currentLocation: this.state.locations[cachedLocationIndex]});
+      return;
+    }
     const url = config.geocodeUrl + '?location=' + encodeURIComponent(location);
     axios.get(url)
       .then(response => {
@@ -37,6 +42,7 @@ export class WeatherWidget extends Component {
       })
       .then(response => {
         const currentLocation = {
+          id: cachedLocationIndex >= 0 ? this.state.locations[cachedLocationIndex].id : this.state.locations.length,
           ...this.state.tmpLocation,
           timestamp: response.data.currently.time,
           date: moment.unix(response.data.currently.time).format('DD.MM.YYYY'),
@@ -47,15 +53,13 @@ export class WeatherWidget extends Component {
         this.setState({
           currentLocation
         });
-        // TODO cache locations
-        // if (!this.state.locations.find(location => location.name === currentLocation.name)) {
-        //   this.setState({
-        //     locations: [
-        //       ...this.state.locations,
-        //       currentLocation,
-        //     ],
-        //   });
-        // }
+        const newLocations = [...this.state.locations];
+        if (cachedLocationIndex >= 0) {
+          newLocations[cachedLocationIndex] = currentLocation;
+        } else {
+          newLocations.push(currentLocation)
+        }
+        this.setState({ locations: [...newLocations] });
       })
       .catch(error => {
         const currentLocation = {
@@ -87,7 +91,7 @@ export class WeatherWidget extends Component {
               <p>{this.state.currentLocation.summary}</p>
             </section>
           </section>
-          <WeatherCity getWeather={this.getWeather} />
+          <WeatherCity getWeather={this.getWeather} locations={this.state.locations} />
         </div>
       );
     } else {
