@@ -91,3 +91,7 @@ section.desc h2 {
 .wind {
   background-color: #7bc1e8;
 }
+
+.no-data {
+  background-color: #f6543b;
+}

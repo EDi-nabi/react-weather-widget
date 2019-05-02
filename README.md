@@ -9,13 +9,13 @@ Connections to APIs are proxied by php scripts working on the server to protect 
 In the 'design' folder you can find a Affinity Designer file with the widget layout.
 
 ## Installation and configuration
-Proxy scripts are located in 'proxy' directory.
-Rename darksky-sample.php and geocode-sample.php to darksky.php and geocode.php.
-In both files enter valid API keys in line 9.
-Upload both files to your server.
-Rename /src/config/config-sample.js to config.js.
-Enter valid urls to your proxy files in config.js.
-Build.
+Proxy scripts are located in '/proxy' directory.<br>
+Rename darksky-sample.php and geocode-sample.php to darksky.php and geocode.php.<br>
+In both files enter valid API keys in line 9.<br>
+Upload both files to your server.<br>
+Rename /src/weather-widget/config/config-sample.js to config.js.<br>
+Enter valid urls to your proxy files in config.js.<br>
+Build.<br>
 Enjoy.
 
 ## Resources used

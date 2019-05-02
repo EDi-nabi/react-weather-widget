@@ -3,7 +3,7 @@ import axios from 'axios';
 import moment from 'moment';
 
 import styles from './WeatherWidget.module.css';
-import config from '../config/config';
+import config from './config/config';
 import WeatherIcon from './weather-icon/WeatherIcon';
 import WeatherCity from './weather-city/WeatherCity';
 
@@ -58,7 +58,19 @@ export class WeatherWidget extends Component {
         // }
       })
       .catch(error => {
-        console.log(error);
+        const currentLocation = {
+          name: 'No data',
+          lat: 0,
+          lng: 0,
+          timestamp: 0,
+          date: '---',
+          temperature: 0,
+          icon: 'no-data',
+          summary: 'Try again',
+        };
+        this.setState({
+          currentLocation
+        });
       });
   }
 

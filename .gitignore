@@ -27,5 +27,5 @@ yarn-error.log*
 /proxy/*
 !/proxy/*-sample.*
 
-/src/config/*
-!/src/config/*-sample.*
+/src/weather-widget/config/*
+!/src/weather-widget/config/*-sample.*
