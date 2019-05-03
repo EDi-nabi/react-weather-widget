@@ -13,6 +13,7 @@ div, section, p, time, h2, svg, input, button {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   color: #fff;
+  transition: background-color 0.5s ease-out;
 }
 
 section.weather {

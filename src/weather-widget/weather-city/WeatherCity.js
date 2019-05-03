@@ -19,7 +19,9 @@ export class WeatherCity extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    this.getWeather();
+    if (this.state.locationInput) {
+      this.getWeather();
+    }
   }
 
   getWeather = () => {
