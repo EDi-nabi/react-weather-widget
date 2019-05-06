@@ -14,10 +14,10 @@ export class WeatherWidget extends Component {
     locations: [],
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     if (!this.state.currentLocation) {
-      this.getWeather(config.defaultLocation);
+      this.getWeather(this.props.default);
     }
   }
 
