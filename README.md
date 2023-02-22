@@ -1,7 +1,7 @@
 # React Weather Widget
 
-Simple weather widget.
-~~Working Not working demo: [Weather Widget](http://nabi.pl/test/weather-widget/)
+Simple weather widget.\
+~~Working~~ Not working demo: [Weather Widget](http://nabi.pl/test/weather-widget/)
 
 Widget uses Dark Sky API for weather forecast and Google Maps API for geocoding.
 Connections to APIs are proxied by php scripts working on the server to protect API keys.
